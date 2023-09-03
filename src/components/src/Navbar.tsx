@@ -51,16 +51,18 @@ const Navbar = () => {
         >
           {/* Logo and logo name */}
           <MotionDiv>
-            <Link
-              className="flex gap-4 items-center cursor-pointer"
-              onClick={scrollToTop}
-              to="/"
-            >
-              <img src={logo} alt="Golden Logo" className="w-9 h-9" />
-              <p className="text-[18px] font-bold hidden md:block">
-                <GradientText text="Golden"></GradientText>
-              </p>
-            </Link>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+              <Link
+                className="flex gap-4 items-center cursor-pointer"
+                onClick={scrollToTop}
+                to="/"
+              >
+                <img src={logo} alt="Golden Logo" className="w-9 h-9" />
+                <p className="text-[18px] font-bold hidden md:block">
+                  <GradientText text="Golden"></GradientText>
+                </p>
+              </Link>
+            </motion.div>
           </MotionDiv>
 
           {/* links to sections - show on large screen */}
