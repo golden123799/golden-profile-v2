@@ -20,7 +20,7 @@ import Redux from "./Technologies/Redux.png";
 import Tailwind from "./Technologies/Tailwind.png";
 import Typescript from "./Technologies/Typescript.png";
 import Yii2 from "./Technologies/Yii2.png";
-import PostgreSQL from "./Technologies/PostgreSQL.png";
+import PostgreSQL from "./Technologies/postgreSQL.png";
 import Canva from "./Technologies/Canva.png";
 import ArrowUp from "./ArrowUp.svg";
 
