@@ -4,6 +4,8 @@ import { projects } from "../../utils/constants";
 import SectionWrapper from "./SectionWrapper";
 import SpringMotionDiv from "./SpringMotionDiv";
 import SectionHeadText from "./SectionHeadText";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../utils/motion";
 
 const ProjectCard = ({
   index,
@@ -23,7 +25,7 @@ const ProjectCard = ({
   webpage_link: string;
 }) => {
   return (
-    <SpringMotionDiv direction={"right"} delay={0.5 * index} duration={2}>
+    <motion.div variants={fadeIn("right", "spring", 0.5 * index, 2)}>
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
@@ -83,7 +85,7 @@ const ProjectCard = ({
           ))}
         </div>
       </Tilt>
-    </SpringMotionDiv>
+    </motion.div>
   );
 };
 
@@ -96,7 +98,13 @@ const Project = () => {
         <p className="text-center text-gray-300">Some things I've built</p>
       </SpringMotionDiv>
 
-      <div className="mt-20 flex flex-wrap gap-7 justify-center">
+      <motion.div
+        className="mt-20 flex flex-wrap gap-7 justify-center"
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-card-${index}`}
@@ -109,7 +117,7 @@ const Project = () => {
             webpage_link={project.webpage_link}
           />
         ))}
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 };
