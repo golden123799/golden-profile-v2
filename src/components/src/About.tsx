@@ -2,11 +2,13 @@ import { SectionHeadText, SectionWrapper, SpringMotionDiv } from "..";
 import { profilePicture } from "../../assets";
 import { Tilt } from "react-tilt";
 import { services, technologies } from "../../utils/constants";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../utils/motion";
 
 const ServiceCard = ({ title, index }: { title: string; index: number }) => {
   return (
     <Tilt className="xs:w-[250px] w-[300px]">
-      <SpringMotionDiv direction={"right"} delay={0.5 * index} duration={0.75}>
+      <motion.div variants={fadeIn("right", "spring", 0.7 * index, 2)}>
         <div className="w-full bg-gradient-to-r from-blue-500 to-white p-[1px] rounded-[20px] shadow-card">
           <div className="bg-primary rounded-[20px] py-5 px-12 min-h-[150px] flex justify-evenly items-center flex-col">
             <h3 className="text-white text-[20px] font-bold text-center">
@@ -14,7 +16,7 @@ const ServiceCard = ({ title, index }: { title: string; index: number }) => {
             </h3>
           </div>
         </div>
-      </SpringMotionDiv>
+      </motion.div>
     </Tilt>
   );
 };
@@ -29,7 +31,7 @@ const TechnologyCard = ({
   index: number;
 }) => {
   return (
-    <SpringMotionDiv direction={"right"} delay={0.2 * index} duration={0.35}>
+    <motion.div variants={fadeIn("right", "spring", 0.2 * index, 1)}>
       <div className="group h-[100px] w-[100px] [perspective:1000px]">
         <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0">
@@ -46,7 +48,7 @@ const TechnologyCard = ({
           </div>
         </div>
       </div>
-    </SpringMotionDiv>
+    </motion.div>
   );
 };
 
@@ -86,7 +88,13 @@ const About = () => {
       </div>
 
       {/* Card with tilt functions - to display Services */}
-      <div className="mt-20 flex flex-wrap gap-10 justify-center">
+      <motion.div
+        className="mt-20 flex flex-wrap gap-10 justify-center"
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         {services.map((item, index) => (
           <ServiceCard
             index={index}
@@ -94,14 +102,20 @@ const About = () => {
             key={`ServiceCard-${item}-${index}`}
           ></ServiceCard>
         ))}
-      </div>
+      </motion.div>
 
       <div className="my-20"></div>
 
       <p className="text-center text-gray-300 mb-10">
         Here are the tools and technologies I am familiar with:
       </p>
-      <div className="flex flex-wrap gap-10 justify-center">
+      <motion.div
+        className="flex flex-wrap gap-10 justify-center"
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         {technologies.map((item, index) => (
           <TechnologyCard
             key={`TechnologyCard-${item.name}-${index}`}
@@ -110,7 +124,7 @@ const About = () => {
             index={index}
           ></TechnologyCard>
         ))}
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 };
