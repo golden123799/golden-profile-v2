@@ -5,7 +5,7 @@ const SocialMediaButton = () => {
     <div>
       <a
         href="https://github.com/golden123799"
-        className="m-2 hover:text-blue-400"
+        className="m-3 hover:text-blue-400"
         target="_blank"
       >
         <motion.svg
@@ -28,7 +28,7 @@ const SocialMediaButton = () => {
 
       <a
         href="https://www.linkedin.com/in/golden-fam"
-        className="m-2"
+        className="m-3"
         target="_blank"
       >
         <motion.svg
@@ -54,7 +54,7 @@ const SocialMediaButton = () => {
 
       <a
         href="mailto:goldenfamfc@gmail.com?body=I wanted to say hi!"
-        className="m-2"
+        className="m-3"
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
