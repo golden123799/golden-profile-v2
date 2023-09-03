@@ -91,7 +91,7 @@ const Project = () => {
   return (
     <SectionWrapper idName={"Project"}>
       <SpringMotionDiv direction={"up"} delay={0.3} duration={0.75}>
-        <SectionHeadText text="Experience"></SectionHeadText>
+        <SectionHeadText text="Project"></SectionHeadText>
 
         <p className="text-center text-gray-300">Some things I've built</p>
       </SpringMotionDiv>
