@@ -27,7 +27,7 @@ const Hero = () => {
             <BubbleButton
               onClick={() =>
                 window.open(
-                  "/Golden_Fam_Resume.pdf",
+                  "/Golden_Fam_Resume_v2.pdf",
                   "_blank",
                   "noopener noreferrer"
                 )
