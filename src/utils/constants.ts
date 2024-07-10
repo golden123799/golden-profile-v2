@@ -139,18 +139,6 @@ export const technologies = [
 		name: "Android Studio",
 		icon: AndroidStudio,
 	},
-	{
-		name: "HTML5",
-		icon: Html,
-	},
-	{
-		name: "CSS",
-		icon: CSS,
-	},
-	{
-		name: "Javascript",
-		icon: Javascript,
-	},
 
 ];
 
