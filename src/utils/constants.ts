@@ -1,13 +1,11 @@
 import {
 	Bootstrap,
-	CSS,
 	Dart,
 	Docker,
 	Figma,
 	Firebase,
 	Flutter,
 	Git,
-	Html,
 	Javascript,
 	Laravel,
 	MongoDB,
