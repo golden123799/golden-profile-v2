@@ -68,6 +68,10 @@ export const technologies = [
 		icon: Nodejs,
 	},
 	{
+		name: "Javascript",
+		icon: Javascript,
+	},
+	{
 		name: "Typescript",
 		icon: Typescript,
 	},
@@ -138,8 +142,7 @@ export const technologies = [
 	{
 		name: "Android Studio",
 		icon: AndroidStudio,
-	},
-
+	}
 ];
 
 export const experiences = [
