@@ -19,7 +19,7 @@ const Hero = () => {
           </SpringMotionDiv>
           <SpringMotionDiv direction={"up"} delay={2} whileInView={false}>
             <p className="text-[20px] leading-[40px] sm:text-[40px] mb-10">
-              I'm a software engineer. I build things that live on the internet.
+              I'm a software engineer. <br/> I build things that live on the internet.
             </p>
           </SpringMotionDiv>
 
